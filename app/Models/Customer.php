@@ -14,7 +14,7 @@ class Customer extends Model
         'address',
         'age',
         'nic',
-        'telephone',
+        'telephon',
     ];
 
     use HasFactory;
