@@ -14,6 +14,6 @@ Route::post('customer/add',[CustomerController::class,'savecustomer']);
 
 Route::put('customer/update/{id}',[CustomerController::class,'updatecustomer']);
 
-Route::get('customer/get',[CustomerController::class,'getcustomers']);
+Route::get('customer',[CustomerController::class,'getcustomers']);
 
 Route::delete('customer/delete/{id}',[CustomerController::class,'deletecustomer']);
