@@ -23,12 +23,21 @@ class CustomerController extends Controller
     }
 
     
-    public function store(Request $request)
+    public function savecustomer(Request $request)
     {
        
-        return $this->customer->create($request->all());
-
+    return $this->customer->create($request->all());
+        $data = [
+            "status"=>200,
+            "message"=>'data successufuly added'
+        ];
+        return response()->json($data,200);
+    
     }
+
+
+    
+
 
     
     public function show(string $id)
@@ -39,21 +48,31 @@ class CustomerController extends Controller
     }
 
     
-    public function update(Request $request, string $id)
+    public function updatecustomer(Request $request, string $id)
     {
         
         $customer = $this->customer->find($id);
         $customer->update($request->all());
         return $customer;
+        $data = [
+            "status"=>200,
+            "message"=>'data updated succuessfully'
+        ];
+        return response()->json($data,200);
 
     }
 
    
-    public function destroy(string $id)
+    public function deletecustomer(string $id)
     {
         
         $customer = $this->customer->find($id);
-        return $customer->delete(); 
+        return $customer->delete();
+        $data = [
+            "status"=>200,
+            "message"=>'data deleted succuessfully'
+        ];
+        return response()->json($data,200); 
 
     }
 }
