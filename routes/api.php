@@ -29,3 +29,6 @@ Route::get('address/get',[AddressController::class,'showaddresses']);
 Route::delete('address/delete/{id}',[AddressController::class,'deleteaddress']);
 
 Route::post('customer/insert/{id}',[CustomerController::class,'insertAddress']);
+
+Route::get('customer/get/{id}',[CustomerController::class,'viewAddress']);
+

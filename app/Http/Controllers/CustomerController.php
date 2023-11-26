@@ -16,11 +16,13 @@ class CustomerController extends Controller
         $this->customer = new Customer();
         
     }
+    
 
 
     public function index()
     {
         return $this->customer->all();
+        
 
     }
 
@@ -49,6 +51,19 @@ class CustomerController extends Controller
             'status' => 200,
             'addresses' => 'Success'
         ];
+        return response()->json($data,200);
+  
+    }
+
+
+    public function viewAddress(Request $request,$id){
+
+    $customer = Customer::find($id);
+    return $addresses = $customer->addresses;
+     $data = [
+            'status' => 200,
+            'addresses' => 'Success'
+            ];
         return response()->json($data,200);
 
     
