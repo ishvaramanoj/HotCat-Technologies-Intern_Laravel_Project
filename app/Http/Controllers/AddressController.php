@@ -23,7 +23,7 @@ class AddressController extends Controller
     }
 
    
-    public function store(Request $request)
+    public function saveaddress(Request $request)
     {
         return $this->address->create($request->all());
     }
@@ -35,7 +35,7 @@ class AddressController extends Controller
     }
 
     
-    public function update(Request $request, string $id)
+    public function updateaddress(Request $request, string $id)
     {
         $address = $this->address->find($id);
         $address->update($request->all());
@@ -43,7 +43,7 @@ class AddressController extends Controller
     }
 
     
-    public function destroy(string $id)
+    public function deleteaddress(string $id)
     {
         $address = $this->address->find($id);
         return $address->delete(); 
