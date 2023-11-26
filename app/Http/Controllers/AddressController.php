@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Location;
+use App\Models\Address;
 
 class AddressController extends Controller
 {
@@ -12,7 +12,7 @@ class AddressController extends Controller
     protected $address;
 
     public function __construct(){
-    $this->address = new Location();
+    $this->address = new Address();
         
     }
 

@@ -8,8 +8,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Customer extends Model
 {
+
 //     protected $table = 'customers';
 //   protected $primaryKey = 'id';
+
    protected $fillable = [
         'customer_id',
         'name',
@@ -23,6 +25,6 @@ class Customer extends Model
 
     public function locations()
     {
-        return $this->hasMany(Location::class, 'cus_id');
+        return $this->hasMany(Address::class, 'cus_id');
     }
 }
