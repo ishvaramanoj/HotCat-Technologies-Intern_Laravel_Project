@@ -4,46 +4,48 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Address;
 
 class AddressController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
+    
+    protected $address;
+
+    public function __construct(){
+    $this->address = new Address();
+        
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    public function index()
+
+    {
+       return $this->address->all(); 
+    }
+
+   
     public function store(Request $request)
     {
-        //
+        return $this->address->create($request->all());
     }
 
-    /**
-     * Display the specified resource.
-     */
+   
     public function show(string $id)
     {
-        //
+        $address = $this->address->find($id);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, string $id)
     {
-        //
+        $address = $this->address->find($id);
+        $address->update($request->all());
+        return $address;
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    
     public function destroy(string $id)
     {
-        //
+        $address = $this->address->find($id);
+        return $address->delete(); 
     }
 }
