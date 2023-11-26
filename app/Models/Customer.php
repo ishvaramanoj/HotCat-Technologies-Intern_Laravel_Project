@@ -23,7 +23,7 @@ class Customer extends Model
 
     use HasFactory;
 
-    public function locations()
+    public function addresses():HasMany
     {
         return $this->hasMany(Address::class, 'cus_id');
     }

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\CustomerController;
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use App\Models\Address;
+
 
 class CustomerController extends Controller
 {
@@ -33,6 +35,23 @@ class CustomerController extends Controller
         ];
         return response()->json($data,200);
     
+    }
+
+    public function saveAddress(Request $request,$id){
+        $customer = Customer::find($id);
+
+        $address = new Address;
+        $address->address=$request->address;
+
+        $customer = $customer->addresses()->save($address);
+
+        $data = [
+            'status' => 200,
+            'addresses' => 'Success'
+        ];
+        return response()->json($data,200);
+
+        // return $request;
     }
 
 

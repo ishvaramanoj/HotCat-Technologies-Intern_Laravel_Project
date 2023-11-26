@@ -14,7 +14,7 @@ class Address extends Model
     ];
     use HasFactory;
 
-    public function customer()
+    public function customer():BelongsTo
 
     {
         return $this->belongsTo(Customer::class);
