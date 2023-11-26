@@ -31,7 +31,7 @@ class AddressController extends Controller
    
     public function show(string $id)
     {
-        $address = $this->address->find($id);
+       return $address = $this->address->find($id);
     }
 
     
