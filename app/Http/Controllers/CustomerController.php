@@ -37,7 +37,7 @@ class CustomerController extends Controller
     
     }
 
-    public function saveAddress(Request $request,$id){
+    public function insertAddress(Request $request,$id){
         $customer = Customer::find($id);
 
         $address = new Address;
@@ -51,7 +51,7 @@ class CustomerController extends Controller
         ];
         return response()->json($data,200);
 
-        // return $request;
+    
     }
 
 

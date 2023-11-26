@@ -28,4 +28,4 @@ Route::get('address/get',[AddressController::class,'showaddresses']);
 
 Route::delete('address/delete/{id}',[AddressController::class,'deleteaddress']);
 
-Route::post('customer/insert',[CustomerController::class,'saveAddress']);
+Route::post('customer/insert/{id}',[CustomerController::class,'insertAddress']);
