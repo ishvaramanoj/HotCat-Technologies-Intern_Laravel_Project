@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('cus_id');
+            $table->unsignedBigInteger('cus_id');
             $table->string('address');
             $table->timestamps();
+            $table->foreign('cus_id')->references('id')->on('customers')->onDelete('cascade');
         });
     }
 

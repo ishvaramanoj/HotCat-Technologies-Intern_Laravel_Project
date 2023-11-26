@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Customer extends Model
 {
-    protected $table = 'customers';
-  protected $primaryKey = 'id';
+//     protected $table = 'customers';
+//   protected $primaryKey = 'id';
    protected $fillable = [
         'customer_id',
         'name',
@@ -21,7 +21,7 @@ class Customer extends Model
 
     use HasFactory;
 
-    public function addresses():HasMany
+    public function locations()
     {
         return $this->hasMany(Location::class, 'cus_id');
     }

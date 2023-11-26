@@ -8,15 +8,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Location extends Model
 {
-    protected $table = 'locations';
-    protected $primaryKey = 'id';
+    // protected $table = 'locations';
+    // protected $primaryKey = 'id';
+
      protected $fillable = [
           'cus_id',
           'address',
       ];
     use HasFactory;
 
-    public function customer() : BelongsTo
+    public function customer()
 
     {
         return $this->belongsTo(Customer::class);
