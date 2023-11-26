@@ -66,7 +66,6 @@ class CustomerController extends Controller
             ];
         return response()->json($data,200);
 
-    
     }
 
 
